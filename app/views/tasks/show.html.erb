@@ -1,0 +1,17 @@
+<h1><%= @task.title %></h1>
+<br>
+<%= link_to "Edit", "/tasks/#{@task.id}/edit" %>
+<br>
+
+<%= @task.details %>
+<br>
+<br>
+<%= check_box_tag :completed, "completed", @task.completed, disabled: true%>
+<% if @task.completed == true %>
+<%= "Task is completed" %>
+<% else %>
+<%= "Task is incompleted" %>
+<% end %>
+<br>
+<br>
+<%= link_to "Home", "/tasks" %>
